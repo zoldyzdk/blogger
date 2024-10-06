@@ -2,6 +2,7 @@
 import HeaderMenu from '@/components/header-menu.astro';
 import '@/styles/global.css';
 import { ViewTransitions } from 'astro:transitions';
+import '@fontsource/monaspace-neon';
 
 interface Props {
 	title: string;
@@ -26,7 +27,15 @@ const currentPath = Astro.url.pathname;
 	<body>
     <main class="pt-7 m-auto max-w-5xl">
       <HeaderMenu path={currentPath} />
-      <slot />
+      <div class="pt-24">
+        <slot />
+      </div>
     </main>
 	</body>
 </html>
+
+<style is:global>
+  body {
+    font-family: 'Monaspace Neon', monospace;
+  }
+</style>
