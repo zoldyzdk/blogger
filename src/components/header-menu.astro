@@ -1,4 +1,8 @@
 ---
+import { cn } from '@/lib/utils';
+import GithubLink from './github-link';
+import { Button, buttonVariants } from './ui/button';
+
 interface Props {
   path: string;
 }
@@ -7,10 +11,31 @@ const { path } = Astro.props;
 ---
 
 <section class="w-full flex justify-between">
-  <div class=" rounded-full size-10 border" />
-  <div class="flex items-center space-x-4">
-    <a href="/" class={`${path === '/' ? 'text-gray-900' : 'text-gray-400'}`}>Home</a>
-    <a href="/blog" class={`${path.includes("blog") ? "text-gray-900" : "text-gray-400"} `}>Blog</a>
-    <a href="/contact" class={`${path.includes("contact") ? "text-gray-900" : "text-gray-400"} `}>Contact</a>
+  <GithubLink />
+  <div class="flex items-center">
+    <a href="/" 
+      class={cn(
+        buttonVariants({variant: 'link'}),
+        `${path === '/' ? 'text-gray-900' : 'text-gray-400'}`
+      )}
+    >
+      Home
+    </a>
+    <a href="/blog" 
+        class={cn(
+          buttonVariants({variant: 'link'}),
+          `${path.includes("blog") ? "text-gray-900" : "text-gray-400"} `
+        )}
+      >
+      Blog
+    </a>
+    <a href="/contact" 
+      class={cn(
+          buttonVariants({variant: 'link'}),
+          `${path.includes("contact") ? "text-gray-900" : "text-gray-400"}`
+        )}
+    >
+      Contact
+    </a>
   </div>
 </section>
