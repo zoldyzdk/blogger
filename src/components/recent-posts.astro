@@ -1,0 +1,26 @@
+---
+import { cn } from '@/lib/utils';
+import { buttonVariants } from './ui/button';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog');
+---
+
+<section>
+  <h2 class="text-2xl">Posts</h2>
+  <ul class="">
+    <li class="flex gap-4 items-center pt-5">
+      {
+        allPosts.map((post) => (
+          <div class="text-xs text-gray-600">{post.data.date}</div>
+          <a
+            class={cn(buttonVariants({ variant: 'link' }), 'hover:cursor-pointer')}
+            href={`/blog/${post.slug}`}
+          >
+            {post.data.title}
+          </a>
+        ))
+      }
+    </li>
+  </ul>
+</section>
