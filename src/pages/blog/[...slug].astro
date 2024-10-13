@@ -1,4 +1,5 @@
 ---
+import PostLayout from '@/layouts/post-layout.astro';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -13,5 +14,7 @@ const { post } = Astro.props;
 const { Content } = await post.render();
 ---
 
-<h1 class="text-3xl">{post.data.title}</h1>
-<Content />
+<PostLayout title={post.data.title}>
+  <div class="text-3xl mb-32">{post.data.title}</div>
+  <Content />
+</PostLayout>
