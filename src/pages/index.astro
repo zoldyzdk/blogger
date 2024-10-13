@@ -5,10 +5,46 @@ import Layout from '@/layouts/layout.astro';
 
 <Layout title="Home">
   <section>
-    <h1 class="text-2xl mb-7">I'm Hewerton, a software engineer</h1>
-    <p class="text-gray-600">Navigating the programmer's world.</p>
+    <h1 class="font-semibold text-2xl mb-7">
+      <div>Hi.</div>
+      <div>I'm Hewerton.</div>
+      <div>
+        A software engineer working at <a
+          href="https://sensedia.com"
+          target="_blank"
+          class="hover:cursor-pointer hover:text-gray-400 link-underline link-underline-black"
+          >Sensedia</a
+        >
+      </div>
+    </h1>
+    <p class="text-gray-600">
+      Currently based in Brazil, with a focus on web technologies and a strong
+      interest in open source, Golang, and functional programming.
+    </p>
   </section>
   <section>
     <RecentPosts />
   </section>
 </Layout>
+
+<style>
+  .link-underline {
+    border-bottom-width: 0;
+    background-image: linear-gradient(transparent, transparent),
+      linear-gradient(#fff, #fff);
+    background-size: 0 3px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.5s ease-in-out;
+  }
+
+  .link-underline-black {
+    background-image: linear-gradient(transparent, transparent),
+      linear-gradient(#8241b0, #8241b0);
+  }
+
+  .link-underline:hover {
+    background-size: 100% 3px;
+    background-position: 0 100%;
+  }
+</style>
