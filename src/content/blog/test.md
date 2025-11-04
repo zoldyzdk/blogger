@@ -1,7 +1,7 @@
 ---
 title: "This is my first blog post"
 description: "This post is purely for testing if the css is correct for the title on the page"
-date: "09  Out 2023"
+date: "09  Out 2025"
 ---
 
 ### Just a blog post title
